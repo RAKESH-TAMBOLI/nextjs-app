@@ -8,12 +8,23 @@ import identityIcons from '../../helpers/identityIcons'
 
 const Profile = ({ user }) => {
     // const [user, setUser] = useState({})
+    // const [user, setUser] = useState(user)
     console.log(user)
     // console.log(user?.identities)
     // const idtity = user?.identities['appleMusic']
     // const validId = idtity?.filter(item => console.log(item))
     // console.log(idtity)
     // console.log(appConstants)
+
+    useEffect(() => {
+        const ButtonClick = () => {
+            // axios2 request
+            // const { data } = await axios.get(
+            //     'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+            // )
+            setUser([...user, ...user])
+        }
+    }, [])
 
     // useEffect(() => {
     //     const fetchdata = async () => {
@@ -45,7 +56,7 @@ const Profile = ({ user }) => {
                     /> */}
                 <meta
                     property='og:image'
-                    content='/image/onetaphello.png'
+                    content='/image/download.jpg'
                     // image user
                 />
                 <meta
