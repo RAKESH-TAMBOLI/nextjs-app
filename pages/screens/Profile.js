@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import appConstants from '../../helpers/appContants'
@@ -37,6 +38,27 @@ const Profile = () => {
                 src={user?.contacts?.avatarUrl}
                 alt={user?.contacts?.first_name}
             /> */}
+            <Head>
+                <meta
+                    name='description'
+                    // position
+                    content={user?.contacts?.bio}
+                />
+                <meta property='og:title' content={user?.contacts?.position} />
+                <meta
+                    property='og:type'
+                    content='https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+                />
+                <meta
+                    property='og:image'
+                    content={user?.contacts?.avatarUrl}
+                    // image user
+                />
+                <meta
+                    property='og:url'
+                    content='https://onetaphello.herokuapp.com/screens/Profile'
+                />
+            </Head>
             <div className='mt-32 ml-96 w-5/12'>
                 <section className=' relative z-30 my-auto h-full w-full rounded-t-2xl border pt-8 pb-8'>
                     {/* img taps viwes  */}
