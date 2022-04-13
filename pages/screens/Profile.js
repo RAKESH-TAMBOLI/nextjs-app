@@ -48,7 +48,7 @@ const Profile = () => {
                     /> */}
                     <meta
                         property='og:image'
-                        content={user?.contacts?.avatarUrl}
+                        content='/image/onetaphello.png'
                         // image user
                     />
                     <meta
@@ -62,6 +62,7 @@ const Profile = () => {
                         {/* img taps viwes  */}
                         <div className='-mt-12 flex flex-col items-center justify-center'>
                             <img
+                                // src='/image/onetaphello.png'
                                 src={user?.contacts?.avatarUrl}
                                 alt={user?.contacts?.first_name}
                                 // className="w-28 rounded-full object-cover "
