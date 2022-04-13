@@ -56,6 +56,7 @@ const Profile = ({ user }) => {
                     /> */}
                 <meta
                     property='og:image'
+                    itemProp='image'
                     content='/image/download.jpg'
                     // image user
                 />
