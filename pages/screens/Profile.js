@@ -50,8 +50,8 @@ const Profile = ({ user }) => {
                 />
                 <meta
                     property='og:url'
-                    content={`https://onetaphello.herokuapp.com/${user?.contacts?.first_name}/${user?._id}`}
-                    // content='https://onetaphello.herokuapp.com/screens/Profile'
+                    // content={`https://onetaphello.herokuapp.com/${user?.contacts?.first_name}/${user?._id}`}
+                    content='https://onetaphello.herokuapp.com/screens/Profile'
                 />
             </Head>
             <div className='mt-32 ml-96 w-5/12'>
