@@ -6,28 +6,28 @@ import socialLink from '../../helpers/socialLinks'
 import identityIcons from '../../helpers/identityIcons'
 // import ProfileC from '../../components/ProfileC'
 
-const Profile = () => {
-    const [user, setUser] = useState({})
-    console.log(user?._id)
+const Profile = ({ user }) => {
+    // const [user, setUser] = useState({})
+    console.log(user)
     // console.log(user?.identities)
     // const idtity = user?.identities['appleMusic']
     // const validId = idtity?.filter(item => console.log(item))
     // console.log(idtity)
     // console.log(appConstants)
 
-    useEffect(() => {
-        const fetchdata = async () => {
-            const { data } = await axios.get(
-                'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
-            )
-            // console.log(`resonse ${data}`)
-            setUser(data)
-            // setTimeout(() => {
-            //     setUser(data)
-            // }, 3000)
-        }
-        fetchdata()
-    }, [])
+    // useEffect(() => {
+    //     const fetchdata = async () => {
+    //         const { data } = await axios.get(
+    //             'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+    //         )
+    //         // console.log(`resonse ${data}`)
+    //         setUser(data)
+    //         // setTimeout(() => {
+    //         //     setUser(data)
+    //         // }, 3000)
+    //     }
+    //     fetchdata()
+    // }, [])
 
     return (
         <>
@@ -283,3 +283,14 @@ const Profile = () => {
     )
 }
 export default Profile
+
+export const getServerSideProps = async () => {
+    const { data } = await axios.get(
+        'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+    )
+    return {
+        props: {
+            user: data
+        }
+    }
+}
