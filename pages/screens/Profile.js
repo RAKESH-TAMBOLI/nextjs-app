@@ -57,9 +57,11 @@ const Profile = ({ user }) => {
                 <meta
                     property='og:image'
                     itemProp='image'
-                    content='/image/download.jpg'
+                    content={user?.contacts?.avatarUrl}
                     // image user
                 />
+                {/* <meta property="og:image:width" content="300"> */}
+                {/* <meta property="og:image:height" content="300"> */}
                 <meta
                     property='og:url'
                     // content={`https://onetaphello.herokuapp.com/${user?.contacts?.first_name}/${user?._id}`}
