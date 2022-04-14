@@ -65,7 +65,7 @@ const Profile = ({ user }) => {
                     // content={user?.contacts?.avatarUrl}
                     // image user
                 />
-                <meta property='fb:app_id' content='rakesh.tamboli.5099' />
+                <meta property='fb:page_id' content='1503421039731588' />
                 <meta name='twitter:card' content='summary' />
                 <meta
                     property='og:url'
