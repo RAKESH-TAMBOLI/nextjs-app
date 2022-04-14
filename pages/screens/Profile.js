@@ -9,22 +9,22 @@ import identityIcons from '../../helpers/identityIcons'
 const Profile = ({ user }) => {
     // const [user, setUser] = useState({})
     // const [user, setUser] = useState(user)
-    console.log(user)
+    // console.log(user)
     // console.log(user?.identities)
     // const idtity = user?.identities['appleMusic']
     // const validId = idtity?.filter(item => console.log(item))
     // console.log(idtity)
     // console.log(appConstants)
 
-    useEffect(() => {
-        const ButtonClick = () => {
-            // axios2 request
-            // const { data } = await axios.get(
-            //     'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
-            // )
-            setUser([...user, ...user])
-        }
-    }, [])
+    // useEffect(() => {
+    //     const ButtonClick = () => {
+    //         // axios2 request
+    //         // const { data } = await axios.get(
+    //         //     'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+    //         // )
+    //         setUser([...user, ...user])
+    //     }
+    // }, [])
 
     // useEffect(() => {
     //     const fetchdata = async () => {
@@ -50,18 +50,18 @@ const Profile = ({ user }) => {
                     content={user?.contacts?.bio}
                 />
                 <meta property='og:title' content={user?.contacts?.position} />
-                {/* <meta
-                        property='og:type'
-                        content='https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
-                    /> */}
                 <meta
-                    property='og:image'
+                    property='og:type'
+                    content='https://onetaphello.herokuapp.com/screens/Profile'
+                />
+                <meta
+                    property='og:image:type'
                     itemProp='image'
                     content={user?.contacts?.avatarUrl}
                     // image user
                 />
-                {/* <meta property="og:image:width" content="300"> */}
-                {/* <meta property="og:image:height" content="300"> */}
+                <meta property='og:image:width' content='300' />
+                <meta property='og:image:height' content='200' />
                 <meta
                     property='og:url'
                     // content={`https://onetaphello.herokuapp.com/${user?.contacts?.first_name}/${user?._id}`}
