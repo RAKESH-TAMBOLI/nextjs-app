@@ -45,7 +45,8 @@ const Profile = ({ user }) => {
             {/* <div> */}
             <Head>
                 <meta
-                    name='description'
+                    // name='description'
+                    property='og:description'
                     // position
                     content={user?.contacts?.bio}
                 />
@@ -54,20 +55,17 @@ const Profile = ({ user }) => {
                     content={user?.contacts?.first_name}
                 />
                 <meta property='og:title' content={user?.contacts?.position} />
-                <meta
-                    property='og:type'
-                    content='https://onetaphello.herokuapp.com/screens/Profile'
-                />
+                <meta property='og:type' content='website' />
+                {/* <meta property='og:image:height' content='200' /> */}
+                {/* <meta property='og:image:width' content='300' /> */}
                 <meta
                     property='og:image'
                     itemProp='image'
                     content={user?.contacts?.avatarUrl}
-                    className='w-72 h-48'
                     // content={user?.contacts?.avatarUrl}
                     // image user
                 />
-                {/* <meta property='og:image:width' content='300' /> */}
-                {/* <meta property='og:image:height' content='200' /> */}
+                <meta name='twitter:card' content='summary' />
                 <meta
                     property='og:url'
                     // content={`https://onetaphello.herokuapp.com/${user?.contacts?.first_name}/${user?._id}`}
@@ -75,6 +73,7 @@ const Profile = ({ user }) => {
                 />
             </Head>
             <div className='mt-32 ml-96 w-5/12'>
+                <link itemProp='thum' />
                 <section className=' relative z-30 my-auto h-full w-full rounded-t-2xl border pt-8 pb-8'>
                     {/* img taps viwes  */}
                     <div className='-mt-12 flex flex-col items-center justify-center'>
@@ -304,13 +303,30 @@ const Profile = ({ user }) => {
 }
 export default Profile
 
+// export const getServerSideProps = async () => {
+//     const { data } = await axios.get(
+//         'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+//     )
+//     return {
+//         props: {
+//             user: data
+//         }
+//     }
+// }
+
 export const getServerSideProps = async () => {
-    const { data } = await axios.get(
+    let user = null
+    await fetch(
         'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
     )
+        .then(response => response.json())
+        .then(json => {
+            user = json
+        })
+
     return {
         props: {
-            user: data
+            user
         }
     }
 }
