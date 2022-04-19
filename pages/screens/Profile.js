@@ -65,7 +65,7 @@ const Profile = ({ user }) => {
                     // content={user?.contacts?.avatarUrl}
                     // image user
                 />
-                <meta property='fb:page_id' content='2220391788200892' />
+                {/* <meta property='fb:page_id' content='2220391788200892' /> */}
                 <meta name='twitter:card' content='summary' />
                 <meta
                     property='og:url'
@@ -318,7 +318,7 @@ export default Profile
 export const getServerSideProps = async () => {
     let user = null
     await fetch(
-        'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/6197f90387cc2c3e6ff2575a'
+        'https://oth-api-test.onetaphello.com/users/get-user-shared-profile/619549a25a0aafadd0d14863'
     )
         .then(response => response.json())
         .then(json => {
